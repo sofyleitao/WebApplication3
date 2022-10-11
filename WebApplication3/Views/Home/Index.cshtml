@@ -1,0 +1,33 @@
+﻿@model List<WebApplication3.Models.Gig>
+@{
+    ViewData["Title"] = "Gig List";
+}
+
+<h1>
+    Gig List
+</h1>
+<table>
+    <tr>
+        <td>DJ</td>
+        <td>Venue</td>
+        <td>Date</td>
+        <td>Time</td>
+        </tr>
+    @foreach (var element in Model)
+            {
+                <tr>
+                    <td>
+                        @element.DJ.StageName
+                    </td>
+                    <td>
+                        @element.Venue.Name
+                    </td>
+                    <td>
+                        @element.Date.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @element.Time
+                    </td>
+                </tr>
+            }
+    </table>
